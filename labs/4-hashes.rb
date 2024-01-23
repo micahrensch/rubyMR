@@ -28,5 +28,12 @@ bitcoin = gets.chomp
 # 2. The value will be a string, so you'll want to convert it to a Float.
 bitcoin = bitcoin.to_f
 
-# 3. inspect the bitcoin_data hash
-# puts bitcoin_data
+# Retrieve the current Bitcoin value in USD from the bitcoin_data hash.
+current_price = bitcoin_data['bpi']['USD']['rate_float']
+
+# Calculate the total value of the user's Bitcoin.
+total_value = bitcoin * current_price
+
+# Display the results (conversion rate)
+puts "1 Bitcoin is valued at $#{current_price} USD."
+puts "Your Bitcoin is worth $#{total_value}."
